@@ -12,6 +12,7 @@ namespace RaveDotNet.Events
         public delegate void RequeryErrorEventHandler(object sender, RequeryErrorEventArgs e);
         public delegate void CancelledEventHandler(object sender, CancelledEventArgs e);
         public delegate void TimeoutEventHandler(object sender, TimeoutEventArgs e);
+
         public event InitEventHandler InitEvent;
         public event SuccessEventHandler SuccessEvent;
         public event FailedEventHandler FailedEvent;

@@ -1,7 +1,6 @@
-using System;
 using System.Collections.Generic;
 
-namespace RaveDotNet
+namespace RaveDotNet.Models
 {
     public class ConfigModel
     {
@@ -11,8 +10,7 @@ namespace RaveDotNet
         public string PublicKey { get; set; } = "APP-PUBLIC-KEY";
     
         public string SecretKey { get; set; } = "APP-SECRET-KEY";
-
-        public string RedirectUrl { get;  set; }
+        
 
         //Set as LIVE or STAGING
         public string Env { get;  set; }
@@ -34,6 +32,21 @@ namespace RaveDotNet
 
         public string GetUrl(string url) {
             return $"{this.BaseUrl}/{url}";
+        }
+
+        public string GetBillPaymentUrl()
+        {
+            return GetUrl("v2/services/confluence");
+        }
+        
+        public string GetPaymentQueryUrl()
+        {
+            return GetUrl("flwv3-pug/getpaidx/api/xrequery");
+        }
+
+        public string GetPaymentJsUrl()
+        {
+            return GetUrl("flwv3-pug/getpaidx/api/flwpbf-inline.js");
         }
     }
 }

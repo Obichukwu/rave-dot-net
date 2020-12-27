@@ -1,6 +1,6 @@
 using System;
 
-namespace RaveDotNet
+namespace RaveDotNet.Models.Payment
 {
     public class PaymentRequestModel
     {
